@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Pomodoro App</title>
+</head>
+<body>
+  <main class="pomodoro">
+
+    
+    
+    <section id="timer__settings-modal" class="hide-modal">
+      <div class="timer__setting-time">
+        <label for="pomo-time">Work:</label>
+        <input type="text" id="pomo-time" value="25" placeholder="Pomodoro time">
+        <input type="hidden" id="data-time-pomo">
+      </div>
+      <div class="timer__setting-time">
+        <label for="short-break">Short Break:</label>
+        <input type="text" id="short-time" value="5" placeholder="Short break time">
+        <input type="hidden" id="data-time-short">
+      </div>
+      <div class="timer__setting-time">
+        <label for="long-break">Long Break:</label>
+        <input type="text" id="long-time" value="15" placeholder="Long break time">
+        <input type="hidden" id="data-time-long">
+      </div>
+      <div class="timer__setting-time">
+        <button id="set-settings">Enviar</button>
+      </div>
+    </section>
+
+    <section class="settings">
+      <button id="btn-settings"><i class="fa-solid fa-gear"></i></button>
+    </section>
+
+    <section>
+      <div class="circular-progress">
+        <span id="time" class="progress-value">0</span>
+      </div>
+    </section>
+    <section class="timer__buttons">
+      <button id="btn-iniciar" class="timer__buttons">Iniciar</button>
+      <button id="btn-detener" class="timer__buttons">Detener</button>
+      <audio src="audio.mp3" id="audio-button" hidden></audio>
+      <audio src="alarm.mp3" id="audio-alarm" hidden></audio>
+    </section>
+  </main>
+
+  <script type="module" src="pomodoro.js"></script>
+</body>
+</html>

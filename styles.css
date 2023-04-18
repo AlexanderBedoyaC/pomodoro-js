@@ -1,0 +1,113 @@
+html {
+  padding: 0;
+  margin: 0;
+}
+
+/* Google Fonts - Poppins */
+
+.pomodoro{
+  font-family: system-ui;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #1A1F2B;
+}
+.timer__setting-time{
+  margin: 1rem;
+}
+
+label{
+  display: inline-block;
+  width: 6rem;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+input{
+  border: none;
+  height: 1.7rem;
+  border-radius: .2rem;
+  padding-left: .4rem;
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  width: 420px;
+  padding: 50px 0;
+  border-radius: 8px;
+  background: #fff;
+  row-gap: 30px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circular-progress {
+  position: relative;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  background: conic-gradient(#FF8A80 360deg, #bcbcbc 0deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circular-progress::before {
+  content: "";
+  position: absolute;
+  height: 230px;
+  width: 230px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.progress-value {
+  position: relative;
+  font-size: 4rem;
+  font-weight: 600;
+  color: #FF8A80;
+}
+
+.settings {
+  margin: 1rem;
+}
+
+.settings button{
+  color: #3D8FD1;
+  font-size: 32px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#btn-iniciar, #btn-detener, #set-settings{
+  background-color: #3D8FD1;
+  border: none;
+  color: #FFFFFF;
+  padding: .5rem 1rem;
+  margin: .5rem 1rem;
+  border-radius: .2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 6rem;
+  cursor: pointer;
+}
+
+.disable{
+  pointer-events: none;
+  opacity: .7;
+  cursor: not-allowed;
+}
+
+.timer__buttons{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
