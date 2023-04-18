@@ -5,6 +5,7 @@ const btnDetener = d.getElementById('btn-detener')
 const btnIniciar = d.getElementById('btn-iniciar')
 const audioBtn = d.getElementById('audio-button')
 const audioAlarm = d.getElementById('audio-alarm')
+const textMode = d.getElementById('mode')
 let pomoTime = d.getElementById('pomo-time').value
 let shortTime = d.getElementById('short-time').value
 let longTime = d.getElementById('long-time').value
@@ -35,28 +36,28 @@ function startTimer(timeInitial) {
     if (time === 0) {
       audioAlarm.play()
       conteo++
-      console.log(conteo)
-      console.log(mode)
       if(mode==='pomodoro'){
         if(conteo===5){
           mode='long'
-          console.log('Long')
           time = parseInt(longTime * 60 * 1000)
           timeInitial = time
+          textMode.textContent = 'DESCANSO LARGO'
         } else {
           mode = 'short'
           time = parseInt(shortTime * 60 * 1000)
-          console.log(time)
           timeInitial = time
+          textMode.textContent = 'DESCANSO CORTO'
         }
       } else if(mode==='short'){
         mode='pomodoro'
         time = parseInt(pomoTime * 60 * 1000)
         timeInitial = time
+        textMode.textContent = 'POMODORO'
       } else if(mode==='long'){
         mode='pomodoro'
         time = parseInt(pomoTime * 60 * 1000)
         timeInitial = time
+        textMode.textContent = 'POMODORO'
         clearInterval(interval)
       } else {
         clearInterval(progress);
