@@ -25,16 +25,12 @@ d.addEventListener('DOMContentLoaded', ()=>{
 
 function startTimer(timeInitial) {
 
-  let dismBar = 360/(timeInitial/1000)
-  let progressBar = 360
-
   let time = timeInitial
   const interval = setInterval(() => {
     time = time - 1000;
     progressValue.textContent = `${(formatTime(time))}`
     progressValue.data = time
-    progressBar = progressBar - dismBar
-    circularProgress.style.background = `conic-gradient(#FF8A80 ${progressBar}deg, #bcbcbc 0deg)`
+    circularProgress.style.background = `conic-gradient(#FF8A80 ${((360*(timeInitial-time))/timeInitial)}deg, #bcbcbc 0deg)`
 
     if (time === 0) {
       audioAlarm.play()
