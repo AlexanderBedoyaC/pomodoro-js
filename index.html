@@ -14,32 +14,32 @@
 <body>
   <main class="pomodoro">
 
-    
-    
-    <section id="timer__settings-modal" class="hide-modal">
-      <div class="timer__setting-time">
-        <label for="pomo-time">Work:</label>
-        <input type="text" id="pomo-time" value="25" placeholder="Pomodoro time">
-        <input type="hidden" id="data-time-pomo">
-      </div>
-      <div class="timer__setting-time">
-        <label for="short-break">Short Break:</label>
-        <input type="text" id="short-time" value="5" placeholder="Short break time">
-        <input type="hidden" id="data-time-short">
-      </div>
-      <div class="timer__setting-time">
-        <label for="long-break">Long Break:</label>
-        <input type="text" id="long-time" value="15" placeholder="Long break time">
-        <input type="hidden" id="data-time-long">
-      </div>
-      <div class="timer__setting-time">
-        <button id="set-settings">Enviar</button>
+    <section id="modal" class="modal">
+      <div class="modal__container">
+        <div class="timer__setting-time">
+          <label for="pomo-time">Work:</label>
+          <input type="number" id="pomo-time" value="25" placeholder="Pomodoro time">
+          <input type="hidden" id="data-time-pomo">
+        </div>
+        <div class="timer__setting-time">
+          <label for="short-break">Short Break:</label>
+          <input type="number" id="short-time" value="5" placeholder="Short break time">
+          <input type="hidden" id="data-time-short">
+        </div>
+        <div class="timer__setting-time">
+          <label for="long-break">Long Break:</label>
+          <input type="number" id="long-time" value="15" placeholder="Long break time">
+          <input type="hidden" id="data-time-long">
+        </div>
+        <div class="timer__setting-time">
+          <button id="set-settings">Enviar</button>
+        </div>
       </div>
     </section>
 
-    <!-- <section class="settings">
+    <section class="settings">
       <button id="btn-settings"><i class="fa-solid fa-gear"></i></button>
-    </section> -->
+    </section>
     <div class="mode">
       <span id="mode">POMODORO</span>
     </div>
@@ -57,5 +57,6 @@
   </main>
 
   <script type="module" src="pomodoro.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

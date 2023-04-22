@@ -20,7 +20,7 @@ function formatTime(time) {
 }
 
 d.addEventListener('DOMContentLoaded', ()=>{
-  progressValue.textContent = `${(formatTime(pomoTime))}`
+  updateTimer(pomoTime)
   btnDetener.classList.add('disable')
 })
 
@@ -29,7 +29,7 @@ function startTimer(timeInitial) {
   let time = timeInitial
   const interval = setInterval(() => {
     time = time - 1000;
-    progressValue.textContent = `${(formatTime(time))}`
+    progressValue.textContent = formatTime(time)
     progressValue.data = time
     circularProgress.style.background = `conic-gradient(#FF8A80 ${((360*(timeInitial-time))/timeInitial)}deg, #bcbcbc 0deg)`
 
@@ -67,6 +67,10 @@ function startTimer(timeInitial) {
   return interval
 }
 
+function updateTimer(time) {
+  progressValue.textContent = formatTime(time * 60 * 1000)
+}
+
 function stopTimer(interval) {
   clearInterval(interval)
   btnIniciar.classList.remove('disable')
@@ -89,6 +93,7 @@ btnSetSettings.addEventListener('click', () => {
   pomoTime = d.getElementById('pomo-time').value
   shortTime = d.getElementById('short-time').value
   longTime = d.getElementById('long-time').value
-  console.log(pomoTime, shortTime, longTime)
+  modal.classList.remove('modal--show')
+  updateTimer(pomoTime)
 })
 

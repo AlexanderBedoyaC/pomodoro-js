@@ -33,6 +33,7 @@ input{
   border-radius: .2rem;
   padding-left: .4rem;
   font-weight: bold;
+  max-width: 5rem;
 }
 
 .mode {
@@ -71,6 +72,9 @@ input{
   width: 230px;
   border-radius: 50%;
   background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .progress-value {
@@ -92,6 +96,10 @@ input{
   cursor: pointer;
 }
 
+.settings button:hover {
+  opacity: .8;
+}
+
 #btn-iniciar, #btn-detener, #set-settings{
   background-color: #3D8FD1;
   border: none;
@@ -103,6 +111,12 @@ input{
   font-weight: bold;
   width: 6rem;
   cursor: pointer;
+}
+
+#btn-iniciar:hover,
+#btn-detener:hover,
+#set-settings:hover{
+  opacity: .8;
 }
 
 .disable{
@@ -118,3 +132,38 @@ input{
   margin: 1rem 0;
 }
 
+
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ccccccbd;
+  display: flex;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .6s .8s;
+  --transform: translateY(-100vh);
+  --transition: transform .8s;
+}
+
+.modal--show{
+  opacity: 1;
+  pointer-events: unset;
+  transition: opacity .6s;
+  --transform: translateY(0);
+  --transition: transform .8s .8s;
+}
+
+.modal__container {
+  max-width: 400px;
+  min-width: 240px;
+  background-color: #1A1F2B;
+  margin: auto;
+  border-radius: .5rem;
+  padding: 1rem;
+  transform: var(--transform);
+  transition: var(--transition);
+}
